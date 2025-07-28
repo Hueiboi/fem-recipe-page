@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&family=Young+Serif&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Recipe page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      /* margin: 0;
+      padding: 0; */
+    }
+
+    .text-indent {
+      text-indent: 10px;
+    }
+
+    body {
+      background-color: #F3E5D8;
+      min-height: 100vh;
+      display: flex;
+      align-self: center;
+      justify-content: center;
+    }
+    
+    .recipe__card {
+      font-family: 'Outfit', sans-serif;
+      background-color: #fff;
+      max-height: 1710px;
+      max-width: 737px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 20px;
+    }
+
+    .recipe__card-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      margin-top: 30px;
+      border-radius: 10px;
+      overflow: hidden; /*ensures the img fit the border*/
+    }
+
+    .recipe__img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .recipe__card-info {
+      padding: 0px 40px
+    }
+
+    .recipe__card-title {
+      font-family: 'Young Serif', serif;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      margin: 20px 0;
+      color: hsl(24, 5%, 18%)
+    }
+
+    .recipe__card-desc {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: hsl(24, 5%, 18%);
+      margin: 10px 0 30px;
+    }
+
+    .recipe__card-time {
+      background-color: hsl(330, 100%, 98%);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .time__title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: hsl(332, 51%, 32%);
+      margin: 0px;
+      padding: 0px 0px 0px 20px;
+    }
+
+    .time__list {
+      font-size: 0.9rem;
+      color: hsl(27, 7%, 26%);
+    }
+
+    .time__list li {
+      margin: 10px 0;
+    }
+
+    .time__list li::marker {
+      color: hsl(332, 51%, 32%);
+    }
+    
+    .recipe__card-ingredients {
+      border-bottom: 1px solid #e0e0e0; 
+    }
+
+    .ingredients__title {
+      font-family: 'Young Serif', serif;
+      color: hsl(14, 45%, 36%); 
+      margin: 20px 0;
+    }
+
+    .ingredients__list {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: hsl(27, 7%, 26%);
+      margin-bottom: 20px;
+    }
+
+    .ingredients__list li {
+      margin: 10px 0;
+    }
+
+    .ingredients__list li::marker {
+      color: hsl(14, 45%, 36%); 
+    }
+
+    .recipe__card-instructions {
+      border-bottom: 1px solid #e0e0e0; 
+    }
+
+    .instructions__title {
+      font-family: 'Young Serif', serif;
+      color: hsl(14, 45%, 36%); 
+      margin: 20px 0;
+    }
+
+    .instructions__list {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: hsl(27, 7%, 26%);
+      margin-bottom: 20px;
+    }
+
+    .instructions__list li {
+      margin: 10px 0;
+    }
+
+    .instructions__list li::marker {
+      color: hsl(14, 45%, 36%); 
+      font-weight: 700;
+    }
+
+    /* .recipe__card-nutrition {
+      
+    } */
+
+    .nutrition__title {
+      font-family: 'Young Serif', serif;
+      color: hsl(14, 45%, 36%); 
+      margin: 20px 0;
+    }
+
+    .nutrition__table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    .nutrition__table td {
+      border-bottom: 1px solid #e0e0e0;   /* Dòng kẻ ngang giữa các hàng */
+      padding: 10px 12px;                /* Space bên trong ô */
+    }
+
+    span {
+      font-weight: 700;
+      color: hsl(14, 45%, 36%); 
+    }
+  </style>
+</head>
+<body>
+  <main class="recipe__card">
+    <figure class="recipe__card-img">
+      <img src="./assets/images/image-omelette.jpeg" alt="" class="recipe__img">
+    </figure>
+    <div class="recipe__card-info">
+      <h1 class="recipe__card-title">
+        Simple Omelette Recipe
+      </h1>
+
+      <p class="recipe__card-desc">
+        An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked 
+        to perfection, optionally filled with your choice of cheese, vegetables, or meats.
+      </p>
+
+      <section class="recipe__card-time">
+        <h4 class="time__title">
+          Preparation time
+        </h4>
+        <ul class="time__list text-indent">
+          <li><strong>Total:</strong> Approximately 10 minutes</li>
+          <li>
+            <strong>Preparation:</strong> 5 minutes
+          </li>
+          <li>
+            <strong>Cooking:</strong> 5 minutes
+          </li>
+        </ul>
+      </section>
+    
+      <section class="recipe__card-ingredients">
+        <h2 class="ingredients__title">
+          Ingredients
+        </h2>
+        <ul class="ingredients__list text-indent">
+          <li>2-3 large eggs</li>
+          <li>Salt, to taste</li>
+          <li>Pepper, to taste</li>
+          <li>1 tablespoon of butter or oil</li>
+          <li>Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
+        </ul>
+      </section>
+
+      <section class="recipe__card-instructions">
+        <h2 class="instructions__title">
+          Instructions
+        </h2>
+        <ol class="instructions__list text-indent">
+          <li><strong>Beat the eggs:</strong> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
+          You can add a tablespoon of water or milk for a fluffier texture.</li>
+        
+          <li><strong>Heat the pan:</strong> Place a non-stick frying pan over medium heat and add butter or oil.</li>
+        
+          <li><strong>Cook the omelette:</strong> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure the eggs  evenly coat the surface</li>
+        
+          <li><strong>Add fillings (optional):</strong> When the eggs begin to set at the edges but are still slightly runny in the 
+          middle, sprinkle your chosen fillings over one half of the omelette.</li>
+        
+          <li><strong>Fold and serve:</strong> As the omelette continues to cook, carefully lift one edge and fold it over the 
+          fillings. Let it cook for another minute, then slide it onto a plate.</li>
+        
+          <li><strong>Enjoy:</strong> Serve hot, with additional salt and pepper if needed.</li>
+        </ol>
+      </section>
+      
+    
+      <section class="recipe__card-nutrition">
+        <h2 class="nutrition__title">
+          Nutrition
+        </h2>
+        <p class="nutrition__desc">
+          The table below shows nutritional values per serving without the additional fillings.
+        </p>
+        <table class="nutrition__table">
+          <tr>
+            <td>Calories</td>
+            <td><span>277kcal</span></td>
+          </tr>
+          <tr>
+            <td>Carbs</td>
+            <td><span>0g</span></td>
+          </tr>
+          <tr>
+            <td>Protein</td>
+            <td><span>20g</span></td>
+          </tr>
+          <tr>
+            <td>Fat</td>
+            <td><span>22g</span></td>
+          </tr>
+        </table>
+      </section>
+    </div>
+  
+  </main>
+</body>
+</html>
